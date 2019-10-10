@@ -7,5 +7,9 @@ php:
 
 before_script:
   - composer install
+  - yarn install && yarn prod
+  - rm -rf node_modules
+  - composer run-script post-root-package-install
+  - composer run-script post-create-project-cmd
 
 script: vendor/bin/phpunit --verbose
