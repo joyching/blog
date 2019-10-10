@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  api:
+    build: ./dockerfiles/forum
+    image: kanaheijoy/php7.3:latest
