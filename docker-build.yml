@@ -2,5 +2,5 @@ version: '3'
 
 services:
   api:
-    build: ./dockerfiles/forum
+    build: ./dockerfiles/blog
     image: kanaheijoy/php7.3:latest

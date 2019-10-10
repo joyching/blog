@@ -6,7 +6,7 @@ services:
       - ${DOCKER_NGINX_80}:80
     volumes:
       - ./:/var/www/html
-      - ./dockerfiles/forum/config/nginx:/etc/nginx/conf.d
+      - ./dockerfiles/blog/config/nginx:/etc/nginx/conf.d
     depends_on:
       - web
   web:
