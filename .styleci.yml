@@ -1,2 +1,7 @@
-preset: laravel
+preset: psr2
 risky: false
+finder:
+  exclude:
+  - "public"
+  name:
+  - "*.php"
