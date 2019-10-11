@@ -5,6 +5,22 @@ sudo: false
 php:
   - 7.3
 
+services:
+  - mysql
+
+addons:
+  apt:
+    sources:
+      - mysql-5.7-xenial
+    packages:
+      - mysql-server
+
+env:
+  - DB_HOST=127.0.0.1 DB_USERNAME=travis DB_PASSWORD=
+
+before_install:
+  - mysql -e 'CREATE DATABASE homestead;'
+
 before_script:
   - composer install
   - yarn install && yarn prod

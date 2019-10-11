@@ -11,6 +11,9 @@
 |
 */
 
-Route::view('/', 'home')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::view('about', 'about')->name('about');
-Route::view('blog', 'blog')->name('blog.index');
+
+Route::get('posts', 'PostController@index')->name('post.index');
+Route::get('posts/{post}', 'PostController@show')->name('post.show');
+Route::post('posts/{post}/comments', 'API\CommentController@store')->name('comment.store');

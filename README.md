@@ -1,5 +1,8 @@
 # Blog
 
+[![StyleCI](https://github.styleci.io/repos/214119657/shield?branch=master)](https://github.styleci.io/repos/214119657)
+<a href="https://travis-ci.org/joyching/blog"><img src="https://api.travis-ci.org/repos/joyching/blog.svg" alt="Build Status"></a>
+
 ## Develop with Docker
 
 ### System Requirements
@@ -11,7 +14,7 @@ To be able to run Smart EBike api you have to meet the following requirements:
 
 1. Clone repository
 ```
-$ git clone git@github.com:joyching/forum.git
+$ git clone git@github.com:joyching/blog.git
 ```
 
 2. Copy `.env.example` to `.env` and modify according to your environment (make sure database host set to `DB_HOST=mysql`)
@@ -26,7 +29,7 @@ $ docker-compose up -d
 
 4. Build project
 ```
-$ docker-compose exec web ./dockerfiles/forum/bin/preparation.sh
+$ docker-compose exec web ./dockerfiles/blog/bin/preparation.sh
 ```
 If your .env is settled `DOCKER_NGINX_80=4567`, and now you can browse the site at [http://localhost:4567](http://localhost:4567)
 
