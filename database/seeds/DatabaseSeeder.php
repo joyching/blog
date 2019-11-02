@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        if (\App\Post::count() === 0) {
+            $this->call(PostsTableSeeder::class);
+        }
     }
 }
