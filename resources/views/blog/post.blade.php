@@ -35,12 +35,12 @@
                             </div>
                         </div>
 
-                        <div class="comments">
+                        <div class="comments" id="div-comments">
                             <h2>Comments</h2>
                             @foreach($post->comments as $comment)
                             <div class="single-comment">
                                 <div class="comment-img">
-                                    <img src="{{ asset('images/graverter.jpg') }}" alt="author">
+                                    <img src="{{ Gravatar::get($comment->user->email) }}" alt="author">
                                 </div>
                                 <div class="comment-content">
                                     <h5>{{ $comment->user->name }}</h5>
@@ -52,9 +52,12 @@
                                 </div>
                             </div>
                             @endforeach
+                        </div>
+                        <div class="comments">
+                            @if(Auth::check())
                             <div class="single-comment" id="div-reply">
                                 <div class="comment-img">
-                                    <img src="{{ asset('images/graverter.jpg') }}" alt="author">
+                                    <img src="{{ Gravatar::get(Auth::user()->email) }}" alt="author">
                                 </div>
                                 <div class="comment-content comment-form">
                                     <form action="#">
@@ -64,12 +67,14 @@
                                     </form>
                                 </div>
                             </div>
+                            @endif
                         </div>
 
+                        @if(Auth::check())
                         <div class="hide" id="comment-template">
                             <div class="single-comment">
                                 <div class="comment-img">
-                                    <img src="{{ asset('images/graverter.jpg') }}" alt="author">
+                                    <img src="{{ Gravatar::get(Auth::user()->email) }}" alt="author">
                                 </div>
                                 <div class="comment-content">
                                     <h5></h5>
@@ -81,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @endif
                     </div>
                 </div>
                 <!--/.blog-item-->

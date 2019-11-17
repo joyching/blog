@@ -16,7 +16,6 @@
         <link href="{{ asset('css/icomoon.css') }}" rel="stylesheet">
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/jquery.loading.min.css') }}" rel="stylesheet" />
         <!--[if lt IE 9]>
         <script src="{{ asset('js/html5shiv.js') }}"></script>
         <script src="{{ asset('js/respond.min.js') }}"></script>
@@ -31,8 +30,6 @@
     <!--/head-->
 
     <body>
-        @include('sections.header')
-
         @yield('content')
 
         @include('sections.footer')
@@ -44,7 +41,6 @@
         <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
-        <script src="{{ asset('js/jquery.loading.min.js') }}"></script>
         @yield('scripts')
     </body>
 </html>

@@ -30,7 +30,7 @@
 
             <div class="row">
                 <div class="col-md-8 text-center">
-                    <a class="btn btn-primary">More Posts</a>
+                    <a class="btn btn-primary" href="{{ route('post.index') }}">More Posts</a>
                 </div>
             </div>
         </div>
