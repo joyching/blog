@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Auth;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,9 +17,12 @@ class CommentController extends Controller
      */
     public function store(Request $request, Post $post)
     {
-        $user = \App\User::first();
+        if (! Auth::check()) {
+            abort(401);
+        }
+
         $comment = $post->comments()->create([
-            'user_id' => $user->id,
+            'user_id' => Auth::user()->id,
             'body' => $request->comment_body,
         ]);
 
@@ -27,8 +31,8 @@ class CommentController extends Controller
             'body' => $comment->body,
             'created_at' => $comment->created_at->toDateTimeString(),
             'user' => [
-                'id' => $user->id,
-                'name' => $user->name
+                'id' => $comment->user->id,
+                'name' => $comment->user->name
             ]
         ]);
     }

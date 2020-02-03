@@ -33,6 +33,8 @@ mix.copy('resources/js/blog', 'public/js');
 mix.copy('resources/css', 'public/css');
 mix.copy('resources/images', 'public/images');
 mix.copy('resources/fonts', 'public/fonts');
+mix.copy('node_modules/jquery-easy-loading/dist/jquery.loading.min.js', 'public/js/jquery.loading.min.js');
+mix.copy('node_modules/jquery-easy-loading/dist/jquery.loading.min.css', 'public/css/jquery.loading.min.css');
 
 if (mix.inProduction()) {
     mix.version();

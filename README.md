@@ -6,7 +6,7 @@
 ## Develop with Docker
 
 ### System Requirements
-To be able to run Smart EBike api you have to meet the following requirements:
+To be able to run blog you have to meet the following requirements:
 * [docker](https://www.docker.com)
 * [docker-compose](https://docs.docker.com/compose/)
 

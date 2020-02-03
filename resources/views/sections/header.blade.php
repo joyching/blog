@@ -5,7 +5,11 @@
                 <div class="col-xs-12">
                     <div class="social">
                         <div class="search">
-                            <a href="#">Sign in</a> | <a href="#">Sign up</a>
+                            @if(Auth::check())
+                                <a href="#"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> | <a href="{{ route('logout') }}">Sign out</a>
+                            @else
+                                <a href="{{ route('login.index') }}">Sign in</a> | <a href="{{ route('register.index') }}">Sign up</a>
+                            @endif
                         </div>
                     </div>
                 </div>
